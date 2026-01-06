@@ -2,8 +2,6 @@
 Hello! I’m Muhammad Ayaan, an AI & Data Science learner with a strong interest in analytical problem-solving and Python-based development.<br>I work with NumPy, Pandas, Matplotlib, Seaborn, and various data-focused tools to explore datasets, generate insights, and build meaningful visualizations.<br><br>I’m continuously expanding my skills in machine learning, data analysis, and model development, and I enjoy sharing my projects and learning journey here on GitHub.
 
 
-## 🌐 Socials:
-[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/Ayaan Ishaq) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/Ayaan Ishaq) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/Ayaan Ishaq) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:muhammadayaan2217@gmail.com) 
 
 
 
