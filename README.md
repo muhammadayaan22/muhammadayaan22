@@ -1,7 +1,8 @@
 # 💫 About Me:
 Hello! I’m Muhammad Ayaan, an AI & Data Science learner with a strong interest in analytical problem-solving and Python-based development.<br>I work with NumPy, Pandas, Matplotlib, Seaborn, and various data-focused tools to explore datasets, generate insights, and build meaningful visualizations.<br><br>I’m continuously expanding my skills in machine learning, data analysis, and model development, and I enjoy sharing my projects and learning journey here on GitHub.
 
-
+## Access My Portfolio
+file:///C:/Users/M.I%20COMPUTERS/Downloads/muhammad-ayaan-portfolio-v2.html#projects
 
 
 
