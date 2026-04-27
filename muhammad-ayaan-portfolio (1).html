@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Ayaan — Data Scientist & AI/ML Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #060b14;
+    --surface: #0d1623;
+    --surface2: #111d2e;
+    --cyan: #00e5c8;
+    --cyan-dim: rgba(0,229,200,0.12);
+    --cyan-mid: rgba(0,229,200,0.4);
+    --text: #e8f0f8;
+    --muted: #7a8fa8;
+    --border: rgba(0,229,200,0.15);
+    --font-display: 'Syne', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-mono); overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--cyan); border-radius: 2px; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 4rem; background: rgba(6,11,20,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; color: var(--cyan); letter-spacing: 0.05em; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--cyan); }
+
+  #hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 6rem 4rem 4rem; }
+  .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,229,200,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,200,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+  .hero-glow { position: absolute; top: 20%; left: 50%; transform: translateX(-50%); width: 600px; height: 300px; background: radial-gradient(ellipse, rgba(0,229,200,0.08) 0%, transparent 70%); pointer-events: none; }
+  .hero-content { position: relative; z-index: 1; text-align: center; max-width: 900px; }
+  .hero-tag { display: inline-block; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cyan); border: 1px solid var(--border); padding: 0.4rem 1rem; border-radius: 2rem; margin-bottom: 2rem; }
+  .hero-name { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6rem); font-weight: 800; line-height: 1.0; letter-spacing: -0.02em; color: var(--text); margin-bottom: 1.5rem; }
+  .hero-name span { color: var(--cyan); }
+  .hero-sub { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3rem; line-height: 2; }
+  .hero-sub strong { color: var(--text); }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--cyan); color: #060b14; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border: none; cursor: pointer; transition: opacity 0.2s, transform 0.1s; text-decoration: none; display: inline-block; }
+  .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--cyan); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem 2rem; border: 1px solid var(--cyan-mid); cursor: pointer; transition: background 0.2s; text-decoration: none; display: inline-block; }
+  .btn-outline:hover { background: var(--cyan-dim); }
+  .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); font-size: 0.6rem; letter-spacing: 0.15em; color: var(--muted); text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--cyan), transparent); animation: scrollPulse 2s infinite; }
+  @keyframes scrollPulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+
+  section { padding: 6rem 4rem; max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.75rem; }
+  .section-label::before { content: ''; display: block; width: 2rem; height: 1px; background: var(--cyan); }
+  .section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: var(--text); margin-bottom: 3rem; letter-spacing: -0.02em; }
+
+  .about-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: start; }
+  .about-text p { color: var(--muted); font-size: 0.8rem; line-height: 2; margin-bottom: 1.2rem; }
+  .about-text p strong { color: var(--text); }
+  .status-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0,229,200,0.08); border: 1px solid var(--border); padding: 0.5rem 1rem; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--cyan); text-transform: uppercase; margin-bottom: 1.5rem; }
+  .status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--cyan); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .skill-tag { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 0.75rem; border: 1px solid var(--border); color: var(--muted); transition: all 0.2s; cursor: default; }
+  .skill-tag:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-dim); }
+
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: linear-gradient(to bottom, var(--cyan), transparent); }
+  .timeline-item { position: relative; margin-bottom: 2.5rem; cursor: pointer; }
+  .timeline-dot { position: absolute; left: -2.4rem; top: 0.4rem; width: 8px; height: 8px; background: var(--bg); border: 1px solid var(--cyan); transition: background 0.2s; }
+  .timeline-item:hover .timeline-dot { background: var(--cyan); }
+  .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .timeline-company { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text); }
+  .timeline-date { font-size: 0.6rem; letter-spacing: 0.1em; color: var(--cyan); text-transform: uppercase; }
+  .timeline-role { font-size: 0.7rem; color: var(--muted); margin-bottom: 0.75rem; letter-spacing: 0.05em; }
+  .timeline-details { display: none; padding: 1rem; background: var(--surface); border: 1px solid var(--border); margin-top: 0.75rem; }
+  .timeline-item.open .timeline-details { display: block; }
+  .timeline-details li { font-size: 0.7rem; color: var(--muted); line-height: 1.8; list-style: none; padding-left: 1rem; position: relative; }
+  .timeline-details li::before { content: '▸'; position: absolute; left: 0; color: var(--cyan); }
+
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .project-card { background: var(--surface); border: 1px solid var(--border); padding: 1.75rem; transition: border-color 0.3s, transform 0.2s; position: relative; overflow: hidden; }
+  .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--cyan); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+  .project-card:hover { border-color: var(--cyan-mid); transform: translateY(-3px); }
+  .project-card:hover::before { transform: scaleX(1); }
+  .project-num { font-size: 0.6rem; color: var(--cyan); letter-spacing: 0.15em; margin-bottom: 1rem; }
+  .project-title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; line-height: 1.3; }
+  .project-desc { font-size: 0.7rem; color: var(--muted); line-height: 1.9; margin-bottom: 1.25rem; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+  .project-tag { font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.25rem 0.6rem; background: var(--cyan-dim); color: var(--cyan); }
+  .project-link { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; }
+  .project-link:hover { opacity: 0.7; }
+
+  .cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  .cert-card { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem; display: flex; align-items: center; gap: 1.25rem; }
+  .cert-icon { width: 40px; height: 40px; border: 1px solid var(--cyan-mid); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem; }
+  .cert-name { font-size: 0.75rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; line-height: 1.4; }
+  .cert-issuer { font-size: 0.6rem; color: var(--cyan); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  .contact-inner { text-align: center; padding: 4rem; background: var(--surface); border: 1px solid var(--border); position: relative; overflow: hidden; }
+  .contact-inner::before { content: ''; position: absolute; inset: -50%; background: radial-gradient(circle at 50% 50%, rgba(0,229,200,0.05), transparent 60%); pointer-events: none; }
+  .contact-email { font-family: var(--font-display); font-size: clamp(1.2rem, 3vw, 2rem); font-weight: 800; color: var(--text); text-decoration: none; display: block; margin: 1.5rem 0; transition: color 0.2s; }
+  .contact-email:hover { color: var(--cyan); }
+  .contact-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+  .contact-link { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-decoration: none; border: 1px solid var(--border); padding: 0.6rem 1.25rem; transition: all 0.2s; }
+  .contact-link:hover { color: var(--cyan); border-color: var(--cyan); background: var(--cyan-dim); }
+
+  footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); font-size: 0.6rem; color: var(--muted); letter-spacing: 0.1em; }
+
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    #hero { padding: 6rem 1.5rem 4rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-inner { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">MA.</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section id="hero" style="padding:0; max-width:none;">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Available for opportunities</div>
+    <h1 class="hero-name">Muhammad<br><span>Ayaan</span></h1>
+    <p class="hero-sub">
+      <strong>Data Scientist</strong> &nbsp;·&nbsp; <strong>AI / ML Engineer</strong> &nbsp;·&nbsp; <strong>Data Analyst</strong><br>
+      Turning raw data into real decisions — Karachi, Pakistan
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="mailto:ayaanishaq50@gmail.com" class="btn-outline">Get In Touch</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="fade-up">
+    <p class="section-label">Who I Am</p>
+    <h2 class="section-title">Building Intelligence<br>From Data</h2>
+  </div>
+  <div class="about-grid fade-up">
+    <div class="about-text">
+      <div class="status-badge"><div class="status-dot"></div> Open to Work</div>
+      <p>I'm a <strong>Data Scientist and AI/ML Engineer</strong> based in Karachi, Pakistan, passionate about extracting meaningful patterns from complex datasets and building intelligent systems that drive real-world decisions.</p>
+      <p>With hands-on experience across <strong>4 data science internships</strong>, I've worked on end-to-end ML pipelines, EDA, dashboards, and predictive systems using industry-standard tools.</p>
+      <p>Currently deepening my expertise through <strong>Saylani Mass IT's AI & Data Science program</strong> and a Python certification from Cisco Networking Academy.</p>
+    </div>
+    <div>
+      <p class="section-label" style="margin-bottom:1rem;">Tech Stack</p>
+      <div class="skills-grid">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Machine Learning</span>
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">Streamlit</span>
+        <span class="skill-tag">OpenCV</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">Seaborn</span>
+        <span class="skill-tag">Matplotlib</span>
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Jupyter</span>
+        <span class="skill-tag">Kaggle</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="background: var(--surface); max-width:none; padding: 6rem 0;">
+  <div style="max-width:1100px; margin:0 auto; padding: 0 4rem;">
+    <div class="fade-up">
+      <p class="section-label">Career Path</p>
+      <h2 class="section-title">Experience</h2>
+    </div>
+    <div class="timeline fade-up">
+      <div class="timeline-item" onclick="this.classList.toggle('open')">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <span class="timeline-company">DecodeLabs</span>
+          <span class="timeline-date">Apr 2026 – May 2026</span>
+        </div>
+        <p class="timeline-role">Data Analyst Intern · Remote</p>
+        <div class="timeline-details">
+          <ul>
+            <li>Completed a 4-week virtual internship focused on practical data analytics and real-world problem solving.</li>
+            <li>Worked on hands-on projects involving data processing, analysis, and insights generation.</li>
+            <li>Applied industry-standard tools and techniques to build a strong analytical portfolio.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item" onclick="this.classList.toggle('open')">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <span class="timeline-company">Arch Technologies</span>
+          <span class="timeline-date">Feb 2026 – Mar 2026</span>
+        </div>
+        <p class="timeline-role">Data Science Intern · Remote</p>
+        <div class="timeline-details">
+          <ul>
+            <li>Performed data cleaning, EDA, and analysis using Python and SQL.</li>
+            <li>Wrote PostgreSQL queries to extract insights from structured datasets.</li>
+            <li>Built dashboards and reports to visualize trends and support decisions.</li>
+            <li>Collaborated with the team on real-world data science projects.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item" onclick="this.classList.toggle('open')">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <span class="timeline-company">Syntecx Hub</span>
+          <span class="timeline-date">Jan 2026 – Feb 2026</span>
+        </div>
+        <p class="timeline-role">Data Science Intern · Remote</p>
+        <div class="timeline-details">
+          <ul>
+            <li>Analyzed and preprocessed datasets using Python for real-world data science tasks.</li>
+            <li>Developed and evaluated machine learning models under mentor guidance.</li>
+            <li>Created visualizations and reports to communicate insights effectively.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item" onclick="this.classList.toggle('open')">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <span class="timeline-company">CodeAlpha</span>
+          <span class="timeline-date">Jan 2026 – Feb 2026</span>
+        </div>
+        <p class="timeline-role">Data Science Intern · Remote</p>
+        <div class="timeline-details">
+          <ul>
+            <li>Cleaned, analyzed, and visualized datasets to extract actionable insights.</li>
+            <li>Built and evaluated ML models using Python, Pandas, and Scikit-learn.</li>
+            <li>Applied feature engineering and model optimization to improve performance.</li>
+            <li>Gained end-to-end ML workflow experience on real-world projects.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item" onclick="this.classList.toggle('open')">
+        <div class="timeline-dot"></div>
+        <div class="timeline-header">
+          <span class="timeline-company">Adverz.Pro</span>
+          <span class="timeline-date">Feb 2022 – Present</span>
+        </div>
+        <p class="timeline-role">Proxy Marketer · Karachi</p>
+        <div class="timeline-details">
+          <ul>
+            <li>Managing digital campaigns, optimizing conversions, and driving growth.</li>
+            <li>Analytical approach to campaign performance and data-backed decision making.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="fade-up">
+    <p class="section-label">Work</p>
+    <h2 class="section-title">Featured Projects</h2>
+  </div>
+  <div class="projects-grid fade-up">
+    <div class="project-card">
+      <p class="project-num">01 / PROJECT</p>
+      <h3 class="project-title">Customer Behavior Analytics & Segmentation</h3>
+      <p class="project-desc">Analyzed purchasing patterns and applied K-Means/Hierarchical clustering to segment customers. Built Power BI dashboards for targeted marketing insights.</p>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">K-Means</span>
+        <span class="project-tag">PostgreSQL</span>
+        <span class="project-tag">Power BI</span>
+      </div>
+      <a href="#" class="project-link">View Project →</a>
+    </div>
+    <div class="project-card">
+      <p class="project-num">02 / PROJECT</p>
+      <h3 class="project-title">Supply Chain Delay Prediction & Optimization</h3>
+      <p class="project-desc">ML model to predict shipment delays using Random Forest & Gradient Boosting on historical logistics data. Visualized operational insights via Power BI.</p>
+      <div class="project-tags">
+        <span class="project-tag">Scikit-learn</span>
+        <span class="project-tag">Random Forest</span>
+        <span class="project-tag">Gradient Boosting</span>
+        <span class="project-tag">Power BI</span>
+      </div>
+      <a href="#" class="project-link">View Project →</a>
+    </div>
+    <div class="project-card">
+      <p class="project-num">03 / PROJECT</p>
+      <h3 class="project-title">Enterprise Data Warehouse & ETL Pipeline</h3>
+      <p class="project-desc">Designed a relational data warehouse schema and implemented ETL with SQL Server. Used CTEs, window functions, and aggregations for KPI reporting.</p>
+      <div class="project-tags">
+        <span class="project-tag">SQL Server</span>
+        <span class="project-tag">T-SQL</span>
+        <span class="project-tag">ETL</span>
+        <span class="project-tag">Data Warehousing</span>
+      </div>
+      <a href="#" class="project-link">View Project →</a>
+    </div>
+    <div class="project-card">
+      <p class="project-num">04 / PROJECT</p>
+      <h3 class="project-title">Chronic Kidney Disease Risk Prediction</h3>
+      <p class="project-desc">Classification model for early CKD detection using Logistic Regression, Decision Trees & Random Forest. Deployed as an interactive Streamlit prediction app.</p>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">Streamlit</span>
+        <span class="project-tag">Classification</span>
+        <span class="project-tag">Healthcare ML</span>
+      </div>
+      <a href="#" class="project-link">View Project →</a>
+    </div>
+    <div class="project-card">
+      <p class="project-num">05 / PROJECT</p>
+      <h3 class="project-title">New York Airbnb EDA & Visualization</h3>
+      <p class="project-desc">Exploratory data analysis on NYC Airbnb dataset — pricing patterns, room types, and neighborhood trends. Strong data wrangling and visualization storytelling.</p>
+      <div class="project-tags">
+        <span class="project-tag">Pandas</span>
+        <span class="project-tag">NumPy</span>
+        <span class="project-tag">Seaborn</span>
+        <span class="project-tag">EDA</span>
+      </div>
+      <a href="#" class="project-link">View Project →</a>
+    </div>
+  </div>
+</section>
+
+<section id="certifications" style="background: var(--surface); max-width:none; padding: 5rem 0;">
+  <div style="max-width:1100px; margin:0 auto; padding: 0 4rem;">
+    <div class="fade-up">
+      <p class="section-label">Credentials</p>
+      <h2 class="section-title">Certifications</h2>
+    </div>
+    <div class="cert-grid fade-up">
+      <div class="cert-card">
+        <div class="cert-icon">⌨</div>
+        <div>
+          <p class="cert-name">Python Programming</p>
+          <p class="cert-issuer">Cisco Networking Academy</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">◈</div>
+        <div>
+          <p class="cert-name">Data Science & Analytics</p>
+          <p class="cert-issuer">HP Life</p>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">⬡</div>
+        <div>
+          <p class="cert-name">AI & Data Science Course</p>
+          <p class="cert-issuer">Saylani Mass IT · In Progress</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="fade-up">
+    <p class="section-label">Let's Talk</p>
+    <h2 class="section-title">Get In Touch</h2>
+  </div>
+  <div class="contact-inner fade-up">
+    <p style="font-size:0.75rem; color:var(--muted); letter-spacing:0.05em;">Open to data science roles, ML projects & collaborations</p>
+    <a href="mailto:ayaanishaq50@gmail.com" class="contact-email">ayaanishaq50@gmail.com</a>
+    <p style="font-size:0.7rem; color:var(--muted);">Karachi, Pakistan</p>
+    <div class="contact-links">
+      <a href="https://github.com" class="contact-link" target="_blank">GitHub</a>
+      <a href="https://linkedin.com" class="contact-link" target="_blank">LinkedIn</a>
+      <a href="https://hackerrank.com" class="contact-link" target="_blank">HackerRank</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Designed & built with precision &nbsp;·&nbsp; Muhammad Ayaan &nbsp;·&nbsp; 2026</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 100);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
