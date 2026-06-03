@@ -1,67 +1,64 @@
-<!--
-  ████████████████████████████████████████
-  Muhammad Ayaan — GitHub Profile README
-  ████████████████████████████████████████
--->
+## 👨‍💻 About Me
 
-<div align="center">
+I'm **Muhammad Ayaan**, an aspiring **AI & Data Science Engineer** focused on building intelligent applications powered by Machine Learning, Data Analytics, and Computer Vision.
 
-![Typing SVG](https://readme-typing-svg.demolab.com?font=Space+Mono&weight=700&size=22&duration=3000&pause=1000&color=1D9E75&center=true&vCenter=true&width=500&lines=Hey%2C+I'm+Muhammad+Ayaan+%F0%9F%91%8B;AI+%26+Data+Science+Learner;Python+%7C+ML+%7C+Data+Viz)
+My work centers around transforming data into actionable insights and developing practical AI solutions that solve real-world problems. I enjoy working across the entire development lifecycle—from data processing and model development to deployment and user-facing applications.
 
-[![Profile views](https://komarev.com/ghpvc/?username=muhammadayaan22&color=1D9E75&style=flat-square&label=PROFILE+VIEWS)](https://github.com/muhammadayaan22)
+### Current Focus
 
-</div>
+* Machine Learning & Deep Learning
+* Generative AI & RAG Systems
+* Data Analytics & Visualization
+* Computer Vision Applications
+* AI-Powered Web Applications
 
----
+## 🛠 Technologies & Tools
 
-## 🧠 About Me
+### Programming Languages
 
-```python
-class MuhammadAyaan:
-    name     = "Muhammad Ayaan"
-    location = "Karachi, Pakistan 🇵🇰"
-    focus    = ["AI", "Data Science", "ML Engineering"]
-    tools    = ["Python", "TensorFlow", "Pandas", "scikit-learn"]
-    learning = "Always."
-    open_to  = "Opportunities & collaborations"
-```
+![Python](https://img.shields.io/badge/Python-111111?style=for-the-badge\&logo=python)
+![SQL](https://img.shields.io/badge/SQL-111111?style=for-the-badge\&logo=mysql)
+![JavaScript](https://img.shields.io/badge/JavaScript-111111?style=for-the-badge\&logo=javascript)
 
----
+### Data Science & Machine Learning
 
-## 🛠 Tech Stack
+![Pandas](https://img.shields.io/badge/Pandas-111111?style=for-the-badge\&logo=pandas)
+![NumPy](https://img.shields.io/badge/NumPy-111111?style=for-the-badge\&logo=numpy)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-111111?style=for-the-badge\&logo=scikit-learn)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-111111?style=for-the-badge\&logo=tensorflow)
 
-<div align="center">
+### Data Visualization & Analytics
 
-![Python](https://img.shields.io/badge/Python-0d0d0d?style=for-the-badge&logo=python&logoColor=3670A0)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-0d0d0d?style=for-the-badge&logo=tensorflow&logoColor=FF6F00)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-0d0d0d?style=for-the-badge&logo=scikit-learn&logoColor=F7931E)
-![Pandas](https://img.shields.io/badge/Pandas-0d0d0d?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-0d0d0d?style=for-the-badge&logo=numpy&logoColor=013243)
-![Django](https://img.shields.io/badge/Django-0d0d0d?style=for-the-badge&logo=django&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-0d0d0d?style=for-the-badge&logo=flask&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-0d0d0d?style=for-the-badge&logo=mysql&logoColor=4479A1)
-![Power BI](https://img.shields.io/badge/Power_BI-0d0d0d?style=for-the-badge&logo=powerbi&logoColor=F2C811)
+![Power BI](https://img.shields.io/badge/Power_BI-111111?style=for-the-badge\&logo=powerbi)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-111111?style=for-the-badge)
+![Seaborn](https://img.shields.io/badge/Seaborn-111111?style=for-the-badge)
 
-</div>
+### Web Development
 
----
+![Streamlit](https://img.shields.io/badge/Streamlit-111111?style=for-the-badge\&logo=streamlit)
+![Flask](https://img.shields.io/badge/Flask-111111?style=for-the-badge\&logo=flask)
+![Django](https://img.shields.io/badge/Django-111111?style=for-the-badge\&logo=django)
 
-## 📊 GitHub Stats
+### Databases & Tools
 
-<div align="center">
+![MySQL](https://img.shields.io/badge/MySQL-111111?style=for-the-badge\&logo=mysql)
+![Git](https://img.shields.io/badge/Git-111111?style=for-the-badge\&logo=git)
+![GitHub](https://img.shields.io/badge/GitHub-111111?style=for-the-badge\&logo=github)
 
-![Stats](https://github-readme-stats.vercel.app/api?username=muhammadayaan22&theme=github_dark&hide_border=true&show_icons=true&include_all_commits=true&bg_color=0d0d0d&title_color=1D9E75&icon_color=534AB7&text_color=888)
+### AI & LLM Tools
 
-![Streak](https://nirzak-streak-stats.vercel.app/?user=muhammadayaan22&theme=github-dark-blue&hide_border=true&background=0d0d0d&ring=1D9E75&fire=EF9F27&currStreakLabel=1D9E75)
+![OpenAI](https://img.shields.io/badge/OpenAI-111111?style=for-the-badge\&logo=openai)
+![Pinecone](https://img.shields.io/badge/Pinecone-111111?style=for-the-badge)
+![LangChain](https://img.shields.io/badge/LangChain-111111?style=for-the-badge)
+  
 
-![Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=muhammadayaan22&theme=github_dark&hide_border=true&layout=compact&bg_color=0d0d0d&title_color=1D9E75&text_color=888)
+### What I'm Working On
 
-</div>
+* Building end-to-end AI projects
+* Developing production-ready ML applications
+* Expanding expertise in MLOps and LLM Engineering
+* Contributing to open-source projects
 
----
+### Career Goal
 
-<div align="center">
-
-*"First, solve the problem. Then, write the code." — John Johnson*
-
-</div>
+To become a Machine Learning Engineer and build impactful AI products that create real value for businesses and users.
